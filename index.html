@@ -87,7 +87,7 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
             <span class="author-block">
               <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
             </span>
-            <span class="author-block">
+            <span class="author-block">t
               <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
             </span>
             <span class="author-block">
@@ -252,7 +252,7 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -260,7 +260,7 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Paper video. -->
   </div>
 </section>
@@ -268,6 +268,96 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
 
 <section class="section">
   <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Overview</h2>
+
+        <figure class="image is-inline-block">
+          <img src="./static/images/ours/overview.png"
+               style="width:40vw;min-width:330px"
+               alt="Test">
+        </figure>
+        <p>To learn better policy representations for generalization, we utilize an auxilliary self-predictive
+          objective that predicts a future representation <math>
+          <mrow>
+            <mi>ϕ</mi>
+            <mo form="prefix" stretchy="false">(</mo>
+            <msub>
+              <mi>s</mi>
+              <mrow>
+                <mi>t</mi>
+                <mo>+</mo>
+                <mi>k</mi>
+              </mrow>
+            </msub>
+            <mo form="postfix" stretchy="false">)</mo>
+          </mrow>
+        </math> via <math>
+          <mrow>
+            <msub>
+              <mi>ψ</mi>
+              <mi>f</mi>
+            </msub>
+            <mo form="prefix" stretchy="false">(</mo>
+            <mi>ϕ</mi>
+            <mo form="prefix" stretchy="false">(</mo>
+            <msub>
+              <mi>s</mi>
+              <mi>t</mi>
+            </msub>
+            <mo form="postfix" stretchy="false">)</mo>
+            <mo form="postfix" stretchy="false">)</mo>
+          </mrow>
+        </math>. We can also predict backwards with a separate predictor <math>
+          <mrow>
+            <msub>
+              <mi>ψ</mi>
+              <mi>b</mi>
+            </msub>
+            <mo form="prefix" stretchy="false">(</mo>
+            <mi>ϕ</mi>
+            <mo form="prefix" stretchy="false">(</mo>
+            <msub>
+              <mi>s</mi>
+              <mrow>
+                <mi>t</mi>
+                <mo>+</mo>
+                <mi>k</mi>
+              </mrow>
+            </msub>
+            <mo form="postfix" stretchy="false">)</mo>
+            <mo form="postfix" stretchy="false">)</mo>
+          </mrow>
+        </math>. The target offset is sampled geometrically <math>
+          <mrow>
+            <mi>k</mi>
+            <mo>∼</mo>
+          </mrow>
+          <mrow>
+            <mtext>geom</mtext>
+            <mo form="prefix" stretchy="false">(</mo>
+            <mn>1</mn>
+            <mo>−</mo>
+            <mi>γ</mi>
+            <mo form="postfix" stretchy="false">)</mo>
+          </mrow>
+        </math>.</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Representation Visualization</h2>
+
+        <figure class="image is-inline-block">
+          <img src="./static/images/ours/representations.png"
+               style="width:100vw;min-width:330px"
+               alt="Test">
+        </figure>
+          </div>
+    </div>
+
 
     <div class="columns is-centered">
 
@@ -307,73 +397,11 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
     </div>
     <!--/ Matting. -->
 
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
     <!--/ Animation. -->
 
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -399,7 +427,7 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
     </div>
     <!--/ Concurrent Work. -->
 
-  </div>
+  </div> -->
 </section>
 
 
