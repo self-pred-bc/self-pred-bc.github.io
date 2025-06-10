@@ -1,6 +1,10 @@
 body {
   font-family: 'Noto Sans', sans-serif;
 }
+mtext { 
+  font-family: inherit;         /* same as body   */
+  font-style:  normal; 
+}        /* not italicised */
 
 
 .footer .icon-link {

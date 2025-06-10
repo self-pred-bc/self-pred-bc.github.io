@@ -274,10 +274,10 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
 
         <figure class="image is-inline-block">
           <img src="./static/images/ours/overview.png"
-               style="width:40vw;min-width:330px"
+               style="width:30vw;min-width:330px"
                alt="Test">
         </figure>
-        <p>To learn better policy representations for generalization, we utilize an auxilliary self-predictive
+        <p>To learn better policy representations for generalization, we utilize an auxiliary self-predictive
           objective that predicts a future representation <math>
           <mrow>
             <mi>ϕ</mi>
@@ -354,7 +354,7 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
                style="width:100vw;min-width:330px"
                alt="Test">
         </figure>
-        <p>Representation visualizations for different auxilliary losses with BC, indicating cosine similarity between forward prediction <math>
+        <p>Representation visualizations for different auxiliary losses with BC, indicating cosine similarity between forward prediction <math>
           <mi>ψ</mi>
         </math> from all states the goal's (<span style="color:red;">★</span>) representation <math>
           <mi>ϕ</mi>.
@@ -379,7 +379,7 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
                alt="Test">
         </figure>
 
-        <p>Representation visualizations for different auxilliary losses with BC, indicating cosine similarity between forward prediction <math>
+        <p>Representation visualizations for different auxiliary losses with BC, indicating cosine similarity between forward prediction <math>
           <mi>ψ</mi>
         </math> from all states the goal's (<span style="color:red;">★</span>) representation <math>
           <mi>ϕ</mi>.
@@ -389,6 +389,21 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
       </div>
         
     </div> -->
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">OGBench Results</h2>
+
+        <figure class="image is-inline-block">
+          <img src="./static/images/ours/table1.png"
+               style="width:100vw;min-width:330px"
+               alt="Test">
+        </figure>
+        <p>We find that on OGBench tasks requiring combinatorial generalization, using <mrow><mtext>BYOL-</mtext><mi>γ</mi></mrow></math> as an auxiliary objective leads to improvements over BC, and is competitive or better than other representation learning objectives across different tasks. </p>
+        </div>
+
+    </div>
+
+
     <div class="columns is-centered">
       <div class="column is-full-width">
     
@@ -424,11 +439,9 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
           <!-- half-width caption/paragraph -->
           <div class="column is-half">
             <p class="content">
-              Representation visualizations for different auxiliary losses with BC,
-              indicating cosine similarity between forward prediction
-              <math><mi>ψ</mi></math> from all states and the goal’s
-              (<span style="color:red;">★</span>) representation
-              <math><mi>ϕ</mi></math>.
+              We conduct experiments to understand how success rate changes as an agent has to reach more challenging goals further away from its starting position. 
+              We consider the same base 5 evaluation tasks used in Table 1, 
+              but construct intermediate waypoints as shorter horizon goals along the shortest path from the start (<span style="color:rgb(0, 0, 0);">●</span>) to the final goal (<span style="color:rgb(0, 0, 0);">★</span>). 
             </p>
           </div>
         </div>
