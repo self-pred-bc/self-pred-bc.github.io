@@ -62,17 +62,17 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
             Generalization in Behavioral Cloning</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <span href="https://keunhong.com">Daniel Lawson</span><sup>1,2,*</sup>,</span>
+              <a href="https://danielblawson.github.io/">Daniel Lawson</a><sup>1,2,*</sup>,</span>
             <span class="author-block">
-              <span href="https://utkarshsinha.com">Adriana Hugessen</span><sup>1,2,*</sup>,</span>
+              <a href="https://ahugs.github.io/">Adriana Hugessen</a><sup>1,2,*</sup>,</span>
             <span class="author-block">
-              <span href="https://jonbarron.info">Charlotte Cloutier</span><sup>1,3</sup>,
+              <a href="http://www.linkedin.com/in/charlotte-cloutier-994654203">Charlotte Cloutier</a><sup>1,3</sup>,
             </span>
             <span class="author-block">
-              <span href="https://www.danbgoldman.com">Khimya Khetarpal</span><sup>1,4,†</sup>,
+              <a href="https://kkhetarpal.github.io/">Khimya Khetarpal</a><sup>1,4,†</sup>,
             </span>
             <span class="author-block">
-              <span href="http://sofienbouaziz.com">Glen Berseth</span><sup>1,2,†</sup>
+              <a href="https://neo-x.github.io/">Glen Berseth</a><sup>1,2,†</sup>
             </span>
             <!-- <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
@@ -178,6 +178,30 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
   </div>
 </section> -->
 
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+
+      <!-- GIF teaser -->
+      <!-- <figure class="image is-inline-block"> -->
+      <figure class="gif-frame">
+        <img src="./static/videos/Daniel_AdrianaBYOL-GammawebsiteKhimyaextra.gif"    
+             alt="Teaser animation"
+             style="max-width:100%; height:auto;"> 
+      </figure>
+
+      <!-- caption -->
+      <!-- <h2 class="subtitle">
+        asdf
+      </h2> -->
+
+    </div>
+    <hr>  
+
+  </div>
+</section>
+
+
 
 <!-- <section class="hero is-light is-small">
   <div class="hero-body">
@@ -246,6 +270,8 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
 Behavioral cloning (BC) methods trained with supervised learning (SL) are an effective way to learn policies from human demonstrations in domains like robotics. Goal-conditioning these policies enables a single generalist policy to capture diverse behaviors contained within an offline dataset. While goal-conditioned behavior cloning (GCBC) methods can perform well on in-distribution training tasks, they do not necessarily generalize zero-shot to tasks that require conditioning on novel state-goal pairs, i.e. <i>combinatorial generalization</i>. In part, this limitation can be attributed to a lack of temporal consistency in the state representation learned by BC; if temporally related states are encoded to similar latent representations, then the out-of-distribution gap for novel state-goal pairs would be reduced. Hence, encouraging this temporal consistency in the representation space should facilitate combinatorial generalization. Successor representations, which encode the distribution of future states visited from the current state, nicely encapsulate this property. However, previous methods for learning successor representations have relied on contrastive samples, temporal-difference (TD) learning, or both. In this work, we propose a simple yet effective representation learning objective, 
 <math display="block" class="tml-display" style="display:inline math;"><mrow><mtext>BYOL-</mtext><mi>γ</mi></mrow></math>
  augmented GCBC, which is not only able to theoretically approximate the successor representation in the finite MDP case without contrastive samples or TD learning, but also, results in competitive empirical performance across a suite of challenging tasks requiring combinatorial generalization.        </div>
+       <hr>  
+
       </div>
     </div>
     <!--/ Abstract. -->
@@ -342,6 +368,8 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
             <mo form="postfix" stretchy="false">)</mo>
           </mrow>
         </math>.</p>
+        <hr>  
+
       </div>
     </div>
 
@@ -363,6 +391,7 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
         </div>
 
     </div>
+    <hr>  
 
     <!-- <div class="columns is-centered">
       <div class="column is-full-width has-text-centered">
@@ -447,9 +476,11 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
         </div>
     
       </div>
+      
     </div>
     
-    
+    <hr>  
+
 
 
     <!-- <div class="columns is-centered"> -->

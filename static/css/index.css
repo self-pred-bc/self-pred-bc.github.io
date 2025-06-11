@@ -21,6 +21,14 @@ mtext {
   font-variant: small-caps;
 }
 
+.gif-frame {
+  border: 4px solid #ddd;   /* frame thickness & colour   */
+  padding: 6px;             /* space between frame & GIF  */
+  border-radius: 8px;       /* rounded corners (optional) */
+  background: #fff;         /* ensures even edge on dark BGs */
+  display: inline-block;    /* lets text-align:center work */
+}
+
 
 .teaser .hero-body {
   padding-top: 0;
