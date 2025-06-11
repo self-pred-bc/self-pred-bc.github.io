@@ -38,6 +38,12 @@ mtext {
   border: 4px solid #ddd;
   border-radius: 8px;
 }
+.teaser-video {
+  width: 60vw;          /* 60 – 70 % of the viewport; tweak as you like  */
+  max-width: 1400px;    /* safety cap on very large screens (optional)   */
+  height: auto;         /* preserves aspect ratio                        */
+  border-radius: 8px;   /* keep any styling you want                     */
+}
 
 
 
