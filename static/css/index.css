@@ -21,13 +21,24 @@ mtext {
   font-variant: small-caps;
 }
 
+/*.gif-frame {
+  border: 4px solid #ddd;   
+  padding: 6px;           
+  border-radius: 8px;      
+  background: #fff;        
+  display: inline-block;    
+} */
+
 .gif-frame {
-  border: 4px solid #ddd;   /* frame thickness & colour   */
-  padding: 6px;             /* space between frame & GIF  */
-  border-radius: 8px;       /* rounded corners (optional) */
-  background: #fff;         /* ensures even edge on dark BGs */
-  display: inline-block;    /* lets text-align:center work */
+  display: block;            /* ✱ must be block for auto-margins */
+  width: 55vw;             
+  max-width: 1400px;         /* safety cap on very wide screens  */
+  margin: 0 auto;            /* ✱ centres the block horizontally */
+  padding: 6px;           
+  border: 4px solid #ddd;
+  border-radius: 8px;
 }
+
 
 
 .teaser .hero-body {
