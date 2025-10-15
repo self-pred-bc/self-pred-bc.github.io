@@ -275,11 +275,16 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <!-- <div class="content has-text-justified">
 Behavioral cloning (BC) methods trained with supervised learning (SL) are an effective way to learn policies from human demonstrations in domains like robotics. Goal-conditioning these policies enables a single generalist policy to capture diverse behaviors contained within an offline dataset. While goal-conditioned behavior cloning (GCBC) methods can perform well on in-distribution training tasks, they do not necessarily generalize zero-shot to tasks that require conditioning on novel state-goal pairs, i.e. <i>combinatorial generalization</i>. In part, this limitation can be attributed to a lack of temporal consistency in the state representation learned by BC; if temporally related states are encoded to similar latent representations, then the out-of-distribution gap for novel state-goal pairs would be reduced. Hence, encouraging this temporal consistency in the representation space should facilitate combinatorial generalization. Successor representations, which encode the distribution of future states visited from the current state, nicely encapsulate this property. However, previous methods for learning successor representations have relied on contrastive samples, temporal-difference (TD) learning, or both. In this work, we propose a simple yet effective representation learning objective, 
 <math display="block" class="tml-display" style="display:inline math;"><mrow><mtext>BYOL-</mtext><mi>γ</mi></mrow></math>
- augmented GCBC, which is not only able to theoretically approximate the successor representation in the finite MDP case without contrastive samples or TD learning, but also, results in competitive empirical performance across a suite of challenging tasks requiring combinatorial generalization.        </div>
-       <hr>  
+ augmented GCBC, which is not only able to theoretically approximate the successor representation in the finite MDP case without contrastive samples or TD learning, but also, results in competitive empirical performance across a suite of challenging tasks requiring combinatorial generalization.        </div> -->
+         <div class="content has-text-justified">
+While goal-conditioned behavior cloning (GCBC) methods can perform well on in-distribution training tasks, they do not necessarily generalize zero-shot to tasks that require conditioning on novel state-goal pairs, i.e. <i>combinatorial generalization</i>. In part, this limitation can be attributed to a lack of temporal consistency in the state representation learned by BC; if temporally correlated states are properly encoded to similar latent representations, then the out-of-distribution gap for novel state-goal pairs would be reduced. We formalize this notion by demonstrating how encouraging long-range temporal consistency via successor representations (SR) can facilitate generalization.
+We then propose a simple yet effective representation learning objective,
+<math display="block" class="tml-display" style="display:inline math;"><mrow><mtext>BYOL-</mtext><mi>γ</mi></mrow></math> 
+for GCBC, which theoretically approximates the successor representation in the finite MDP case through self-predictive representations, and achieves competitive empirical performance across a suite of challenging tasks requiring combinatorial generalization.
+        <hr>  
 
       </div>
     </div>
@@ -387,7 +392,7 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
         <h2 class="title is-3">Representation Visualization</h2>
 
         <figure class="image is-inline-block">
-          <img src="./static/images/ours/representations.png"
+          <img src="./static/images/ours/updatedbar.png"
                style="width:100vw;min-width:330px"
                alt="Test">
         </figure>
@@ -436,7 +441,7 @@ Behavioral cloning (BC) methods trained with supervised learning (SL) are an eff
              alt="OGBench Results">
 
         <figure class="image is-inline-block">
-          <img src="./static/images/ours/table1.png"
+          <img src="./static/images/ours/updatedtable.png"
                style="width:100vw;min-width:330px"
                alt="Test">
         </figure>
